@@ -27,7 +27,7 @@ const httpLink = new createHttpLink({
 
 // setContext links runs before any remote request by `delegateToSchema`
 const contextlink = setContext((_, previousContext) => {
-  let token = process.env.FAUNADB_PUBLIC_KEY // public token
+  let token = process.env.FAUNADB_ADMIN_KEY // public token
   const event = previousContext.graphqlContext.event
 
   if (event.headers.cookie) {
